@@ -1,0 +1,13 @@
+import java.util.Random;
+
+public class Neuron {
+
+	private double[] _weights;
+	
+	public Neuron(int numberOfInputs)
+	{	
+		_weights = new double[numberOfInputs];
+		
+	}
+
+}

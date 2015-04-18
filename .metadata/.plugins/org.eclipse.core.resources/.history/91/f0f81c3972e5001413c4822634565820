@@ -1,0 +1,14 @@
+
+public class NeuralNetowkr {
+
+	public static void main(String[] args) {
+		
+		double input1 = 1;
+		double input2 = 2;
+		
+		
+		
+		
+		System.out.println("test");
+	}
+}

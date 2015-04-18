@@ -1,0 +1,21 @@
+
+public class Neuron {
+	
+	public double Input;
+	private double _weight;
+	public Neuron(double input, double weight)
+	{
+		Input = input;
+		_weight = weight;
+	}
+	
+	private double AdjustWeight(double weight)
+	{
+		double result = weight;
+		
+		
+		return result;
+		
+	}
+
+}

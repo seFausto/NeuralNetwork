@@ -1,0 +1,23 @@
+
+public class Neuron {
+	
+	public double Input;
+	
+	private double _weight;
+	private double learningRate = .01;
+	
+	
+	public Neuron(double input, double weight)
+	{
+		Input = input;
+		_weight = weight;
+	}
+	
+	public void Train(double input, double output)
+	{
+		
+		
+		
+	}
+
+}

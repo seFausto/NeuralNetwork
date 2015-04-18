@@ -1,0 +1,13 @@
+
+public class Neuron {
+	
+	public double Input;
+	private double weight;
+	public Neuron(double input, double weight)
+	{
+		Input = input;
+		weight = weight;
+		
+	}
+
+}
