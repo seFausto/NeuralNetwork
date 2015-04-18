@@ -1,0 +1,12 @@
+import java.util.Random;
+
+public class NeuralNetwork {
+
+	public static void main(String[] args) {
+
+		Random r = new Random();
+		Neuron neuron = new Neuron(1);
+		
+		// System.out.println(neuron.FeedForward(new double[]{234123412}));
+	}
+}

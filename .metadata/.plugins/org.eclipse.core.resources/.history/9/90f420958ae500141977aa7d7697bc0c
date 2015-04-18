@@ -1,0 +1,13 @@
+
+public class Net {
+ 
+	public void FeedForward()
+	{}
+	
+	public void BackPropagation()
+	{}
+	
+	public void GetResults()
+	{}
+ 
+}

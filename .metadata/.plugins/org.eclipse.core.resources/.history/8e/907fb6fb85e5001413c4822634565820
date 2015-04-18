@@ -1,0 +1,34 @@
+import java.util.ArrayList;
+import java.util.Random;
+
+public class NeuralNetwork {
+
+	public static void main(String[] args) {
+
+		Mlp d = new Mlp(new int[] { 2, 2 });
+
+		ArrayList<float[]> examples = new ArrayList<float[]>();
+		ArrayList<float[]> results = new ArrayList<float[]>();
+		float learning_rate = .01f;
+
+		examples.add(new float[] { 1 });
+		results.add(new float[] { 1 });
+
+		examples.add(new float[] { 2 });
+		results.add(new float[] { 4 });
+
+		examples.add(new float[] { 3 });
+		results.add(new float[] { 9 });
+
+		examples.add(new float[] { 4 });
+		results.add(new float[] { 16 });
+
+		examples.add(new float[] { 5 });
+		results.add(new float[] { 25 });
+
+		d.learn(examples, results, learning_rate);
+
+		System.out.println(d.evaluate(new float[] { 6 }));
+
+	}
+}

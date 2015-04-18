@@ -14,6 +14,11 @@ public class Neuron {
 		
 	}
 	
+	public Neuron()
+	{	
+	
+	}
+	
 	public double FeedForward(double[] inputs)
 	{
 		double sum = 0;

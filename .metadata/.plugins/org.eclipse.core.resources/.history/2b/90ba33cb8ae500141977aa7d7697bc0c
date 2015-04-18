@@ -1,0 +1,15 @@
+import java.util.ArrayList;
+
+
+public class Net {
+ 
+	public void FeedForward(ArrayList<Double> inputVals)
+	{}
+	
+	public void BackPropagation()
+	{}
+	
+	public void GetResults()
+	{}
+ 
+}

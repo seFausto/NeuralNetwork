@@ -1,0 +1,10 @@
+import java.util.Random;
+
+public class NeuralNetwork {
+
+	public static void main(String[] args) {
+
+		Mlp d = new Mlp(new int[] { 1 });
+
+	}
+}

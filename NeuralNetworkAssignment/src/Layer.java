@@ -1,0 +1,11 @@
+import java.util.ArrayList;
+
+public class Layer {
+
+	public ArrayList<Neuron> Neurons;
+
+	public void Layer() {
+		Neurons = new ArrayList<Neuron>();
+	}
+
+}

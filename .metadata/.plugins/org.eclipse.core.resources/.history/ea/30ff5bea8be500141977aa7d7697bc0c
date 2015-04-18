@@ -1,0 +1,23 @@
+import java.util.ArrayList;
+
+public class Net {
+
+	public Net(ArrayList<Integer> topology) {
+		int numberOfLayers = topology.size();
+		
+		for (int i = 0; i < numberOfLayers; i++) {
+			_layers.add(new Layer());
+		}
+		
+	}
+
+	public void FeedForward(ArrayList<Double> inputVals) {
+	}
+
+	public void BackPropagation(ArrayList<Double> targetVals) {
+	}
+
+	public void GetResults(ArrayList<Double> returnVals) {
+	}
+
+}

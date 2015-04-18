@@ -1,0 +1,19 @@
+import java.util.ArrayList;
+
+public class Net {
+
+	
+	private ArrayList<Layer> _layers;
+	public Net(ArrayList<Integer> topology) {
+	}
+
+	public void FeedForward(ArrayList<Double> inputVals) {
+	}
+
+	public void BackPropagation(ArrayList<Double> targetVals) {
+	}
+
+	public void GetResults(ArrayList<Double> returnVals) {
+	}
+
+}
