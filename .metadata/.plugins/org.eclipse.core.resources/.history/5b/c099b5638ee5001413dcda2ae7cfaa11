@@ -1,0 +1,20 @@
+import java.util.ArrayList;
+import java.util.Random;
+
+public class Neuron {
+
+	public Neuron()
+	{	
+	
+	}
+	
+	private double _outputValue;
+	private ArrayList<Connection> _outputWeights;
+	
+}
+
+public class Connection
+{
+	double weight;
+	double deltaWeight;
+}

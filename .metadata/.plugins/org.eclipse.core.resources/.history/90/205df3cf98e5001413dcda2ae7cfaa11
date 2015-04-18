@@ -1,0 +1,27 @@
+import java.util.ArrayList;
+import java.util.Random;
+
+public class NeuralNetwork {
+
+	public static void main(String[] args) {
+
+		ArrayList<Integer> topology = new ArrayList<Integer>();
+		//3 inputs, 1 output
+		topology.add(3);
+		topology.add(2);
+		topology.add(1);
+		
+		Net myNet = new Net(topology);		
+		
+		ArrayList<Double> inputVals = new ArrayList<>();
+		myNet.FeedForward(inputVals);
+		
+		ArrayList<Double> targetVals = new ArrayList<>();
+		myNet.BackPropagation(targetVals);
+		
+		ArrayList<Double> returnVals = new ArrayList<>();
+		myNet.GetResults(returnVals);
+		
+		
+	}
+}

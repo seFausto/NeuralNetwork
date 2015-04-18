@@ -4,7 +4,8 @@ public class Layer {
 
 	public ArrayList<Neuron> Neurons;
 
-	public void Layer() {
+	public Layer() {
+		
 		Neurons = new ArrayList<Neuron>();
 	}
 

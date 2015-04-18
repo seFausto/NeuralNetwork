@@ -1,0 +1,11 @@
+import java.util.Random;
+
+public class Neuron {
+
+	public Neuron()
+	{	
+	
+	}
+	
+	private double _outputValue;
+}

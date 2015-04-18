@@ -1,0 +1,37 @@
+import java.util.ArrayList;
+import java.util.Random;
+
+public class Neuron {
+
+
+	private double _outputValue;
+	
+	private ArrayList<Connection> _outputWeights;
+	
+	public Neuron(int numberOfOutputs)
+	{	
+		Random r = new Random();
+		_outputWeights = new ArrayList<Connection>();
+		
+		for (int i = 0; i < numberOfOutputs; i++) {
+			Connection c = new Connection();
+			c.weight = r.nextDouble();
+			
+			_outputWeights.add(new Connection());
+			
+		}
+	}
+	
+	public void SetOutputValue(double outputValue)
+	{
+		_outputValue = outputValue;
+	}
+	
+	public double GetOuputValue()
+	{
+		return _outputValue;
+	}
+	
+	public void FeedForward(Layer previousLayer)
+	{}
+}

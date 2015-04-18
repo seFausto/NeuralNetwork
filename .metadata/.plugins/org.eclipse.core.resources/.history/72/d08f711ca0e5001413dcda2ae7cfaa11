@@ -1,0 +1,50 @@
+import java.util.ArrayList;
+import java.util.Random;
+
+public class NeuralNetwork {
+
+	public static void main(String[] args) {
+
+		ArrayList<Integer> topology = new ArrayList<Integer>();
+		//3 inputs, 1 output
+		topology.add(2);
+		topology.add(4);
+		topology.add(1);
+		
+		Net myNet = new Net(topology);		
+		
+		
+		for (int i = 0; i < 100000; i++) {
+			
+			ArrayList<Double> inputVals = new ArrayList<>();
+			inputVals.add((double)i);
+			myNet.FeedForward(inputVals);		
+			
+			ArrayList<Double> returnVals = new ArrayList<>();
+			myNet.GetResults(returnVals);
+			for (Double double1 : returnVals) {
+				System.out.println(double1);
+			}
+			
+			ArrayList<Double> targetVals = new ArrayList<>();
+			targetVals.add((double)i*2);
+			myNet.BackPropagation(targetVals);			
+		
+				
+		}
+		
+		
+		ArrayList<Double> inputVals = new ArrayList<>();
+		inputVals.add((double)121212);
+		myNet.FeedForward(inputVals);
+		
+		ArrayList<Double> returnVals = new ArrayList<>();
+		myNet.GetResults(returnVals);
+		
+		for (Double double1 : returnVals) {
+			System.out.println(double1);
+		}
+		
+		
+	}
+}
