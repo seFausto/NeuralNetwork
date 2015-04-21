@@ -1,7 +1,0 @@
-import java.util.Random;
-
-public class Neuron {
-
-	private double[] _weight;
-
-}

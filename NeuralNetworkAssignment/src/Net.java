@@ -6,6 +6,7 @@ public class Net {
 	private double _error;
 	private double _recentAverageError;
 	private double _recentAverageSmoothingFactor = 100;
+	private ArrayList<Double> _inputValues;
 
 	public Net(ArrayList<Integer> topology) {
 		_layers = new ArrayList<Layer>();
@@ -13,7 +14,10 @@ public class Net {
 
 		for (int layerCount = 0; layerCount < numberOfLayers; layerCount++) {
 			_layers.add(new Layer());
-			int numberOfOutputs = layerCount == topology.size() - 1 ? 0
+
+			// if its the last layer, don't add any outputs that go to another
+			// layer
+			int numberOfOutputs = layerCount == topology.size() - 1 ? 1
 					: topology.get(layerCount + 1);
 
 			int neuronCount;
@@ -23,7 +27,7 @@ public class Net {
 						neuronCount));
 			}
 
-			_layers.get(layerCount).Neurons.get(neuronCount-1)
+			_layers.get(layerCount).Neurons.get(neuronCount - 1)
 					.SetOutputValue(1.0);
 
 		}
@@ -32,6 +36,7 @@ public class Net {
 
 	public void FeedForward(ArrayList<Double> inputVals) {
 		// assert
+		_inputValues = inputVals;
 		for (int i = 0; i < inputVals.size(); i++) {
 
 			_layers.get(0).Neurons.get(i).SetOutputValue(inputVals.get(i));
@@ -56,8 +61,10 @@ public class Net {
 		_error = 0.0;
 
 		for (int n = 0; n < outputLayer.Neurons.size() - 1; n++) {
-			double delta = targetVals.get(n)
-					- outputLayer.Neurons.get(n).GetOuputValue();
+
+			double output = outputLayer.Neurons.get(n).GetOuputValue();			
+			double delta = targetVals.get(n) - output;
+
 			_error += delta * delta;
 		}
 
@@ -68,6 +75,12 @@ public class Net {
 				* _recentAverageSmoothingFactor + _error)
 				/ (_recentAverageSmoothingFactor + 1.0);
 
+		
+		if(_error == 0)
+		{
+			return;
+		}
+		
 		for (int i = 0; i < outputLayer.Neurons.size() - 1; i++) {
 			outputLayer.Neurons.get(i).CalcOutputGradients(targetVals.get(i));
 		}
@@ -93,13 +106,17 @@ public class Net {
 
 	}
 
-	public void GetResults(ArrayList<Double> returnVals) {
-		returnVals.clear();
-		int last = _layers.size() - 1;
-		for (int i = 0; i < _layers.get(last).Neurons.size() - 1; i++) {
-			returnVals.add(_layers.get(last).Neurons.get(i).GetOuputValue());
+	
 
+	public ArrayList<Double> GetResults() {
+		ArrayList<Double> result = new ArrayList<Double>();
+		int last = _layers.size() - 1;
+		Layer layer = _layers.get(last);
+		for (int i = 0; i < layer.Neurons.size() - 1; i++) {
+			result.add(layer.Neurons.get(i).GetOuputValue());
 		}
+
+		return result;
 	}
 
 }

@@ -11,8 +11,9 @@ INDEX VERSION 1.127+/Users/faustoruvalcaba/Documents/NeuralNetwork/NeuralNetwork
 3266567714.index
 1833648217.index
 3937431432.index
-1271342938.index
+1336463578.index
 2044768101.index
+1271342938.index
 750223094.index
 1819685514.index
 156905802.index
